@@ -1,10 +1,8 @@
 import cv2
 import time
 import torch
-import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
-from torchvision.transforms import ToPILImage
 import yolov5
 # medium model
 # https://github.com/ultralytics/yolov5/releases/download/v6.0/yolov5m.pt
@@ -38,7 +36,7 @@ def yolov5_inference(
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
 # init webcam
-webCam = cv2.VideoCapture(0)
+webCam = cv2.VideoCapture(-1)
 
 #Extract image features
 
